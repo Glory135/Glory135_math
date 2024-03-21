@@ -3,15 +3,18 @@ from typing import Union
 
 
 def power(x: int, y: int) -> Union[float, int]:
-    res = pow(x, y)
+    res = x ** y
     return res
 
 
 def factorial(n: int) -> int:
     if n < 0:
         raise ValueError("n cannot be a negative number")
-    res = math.factorial(n)
-    return res
+    accumulator = 1
+    while  n > 1:
+        accumulator *= n
+        n -= 1
+    return accumulator
 
 
 def permutation(n: int, r: int) -> float:
